@@ -1,9 +1,11 @@
-#' Imports hydrochemsitry.csv as a data frame and optionally combines samples
-#' with location data
+#' Import hydrochemistry and sampling location data
 #'
-#' This function converts imports the hydrochemstry.csv file from the GLORICH
+#' This function imports the hydrochemstry.csv file from the GLORICH
 #' database, and has the option to add location data from 'sampling_locations.csv'
-#' to each sample
+#' to each sample.
+#'
+#' The data columns from sampling_locations.csv that are added are:
+#''Country', 'State', 'Latitude', 'Longitude', 'CoordinateSystem'
 #' .
 #' @param location A boolean determining whether location data should be included
 #' @return A dataframe containing data from hydrochemistry.csv
