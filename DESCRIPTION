@@ -2,8 +2,7 @@ Package: glorichr
 Type: Package
 Title: Package for manipulating the GLORICH database
 Version: 0.1.0
-Authors@R: c(person("Mario", "Lambrette", role = c("aut", "cre"),
-                     email = "ml673@exeter.ac.uk")
+Author: Mario Lambrette [aut, cre]
 Maintainer: Mario Lambrette <ml673@exeter.ac.uk>
 Description: A package containing functions for the manipulation of the GLORICH 
     database. Ensure the database has been downloaded from the PANGEA website
