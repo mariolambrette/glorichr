@@ -2,8 +2,7 @@
 % Please edit documentation in R/LoadHydroData.R
 \name{LoadHydroData}
 \alias{LoadHydroData}
-\title{Imports hydrochemsitry.csv as a data frame and optionally combines samples
-with location data}
+\title{Import hydrochemistry and sampling location data}
 \usage{
 LoadHydroData(location)
 }
@@ -14,9 +13,13 @@ LoadHydroData(location)
 A dataframe containing data from hydrochemistry.csv
 }
 \description{
-This function converts imports the hydrochemstry.csv file from the GLORICH
+This function imports the hydrochemstry.csv file from the GLORICH
 database, and has the option to add location data from 'sampling_locations.csv'
-to each sample
+to each sample.
+}
+\details{
+The data columns from sampling_locations.csv that are added are:
+'Country', 'State', 'Latitude', 'Longitude', 'CoordinateSystem'
 .
 }
 \examples{
