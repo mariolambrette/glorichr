@@ -7,19 +7,22 @@
 #' The data columns from sampling_locations.csv that are added are:
 #''Country', 'State', 'Latitude', 'Longitude', 'CoordinateSystem'
 #' .
-#' @param location A boolean determining whether location data should be included
+#' @param hydro_filepath The file path to the hydrochemsitry.csv file (either an absolute path, or a relative path from the current wd)
+#' @param location A boolean determining whether location data should be included, false by default
+#' @param loc_filepath The file path to the sampling_location.csv file (either an absolute path, or a relative path from the current wd)
 #' @return A dataframe containing data from hydrochemistry.csv
 #' @export
 #' @examples
-#' LoadHydroData(location = F)
+#' LoadHydroData(hydro_filepath = 'hydrochemistry.csv', location = T, loc_filepath = 'sampling_locations.csv')
+#' LoadHydroData(hydro_filepath = 'hydrochemistry.csv')
 
 
-LoadHydroData <- function(location){
-  hydrochem <- read.csv('hydrochemistry.csv')
+LoadHydroData <- function(hydro_filepath, location = F, loc_filepath){
+  hydrochem <- read.csv(hydro_filepath)
   if(location){
-    sampling_location <- read.csv('sampling_locations.csv')
+    sampling_location <- read.csv(loc_filepath)
     loc <- sampling_location[c('STAT_ID', 'Country', 'State', 'Latitude',
-                                    'Longitude', 'CoordinateSystem')]
+                               'Longitude', 'CoordinateSystem')]
     df <- merge(hydrochem, loc, by = 'STAT_ID')
   }
   else{

@@ -4,10 +4,14 @@
 \alias{LoadHydroData}
 \title{Import hydrochemistry and sampling location data}
 \usage{
-LoadHydroData(location)
+LoadHydroData(hydro_filepath, location = F, loc_filepath)
 }
 \arguments{
-\item{location}{A boolean determining whether location data should be included}
+\item{hydro_filepath}{The file path to the hydrochemsitry.csv file (either an absolute path, or a relative path from the current wd)}
+
+\item{location}{A boolean determining whether location data should be included, false by default}
+
+\item{loc_filepath}{The file path to the sampling_location.csv file (either an absolute path, or a relative path from the current wd)}
 }
 \value{
 A dataframe containing data from hydrochemistry.csv
@@ -23,5 +27,6 @@ The data columns from sampling_locations.csv that are added are:
 .
 }
 \examples{
-LoadHydroData(location = F)
+LoadHydroData(hydro_filepath = 'hydrochemistry.csv', location = T, loc_filepath = 'sampling_locations.csv')
+LoadHydroData(hydro_filepath = 'hydrochemistry.csv')
 }
