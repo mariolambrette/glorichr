@@ -8,6 +8,9 @@ Description: A package containing functions for the manipulation of the GLORICH
     database. Ensure the database has been downloaded from the PANGEA website
     and is located in the working directory before use.
 Depends: R (>= 4.1)
+Imports:
+  rgdal,
+  maptools
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
