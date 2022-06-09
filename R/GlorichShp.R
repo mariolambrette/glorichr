@@ -61,6 +61,11 @@ GlorichShp <- function(data,
                        filename = NULL,
                        filepath = NULL){
 
+  # Make the required packages available
+
+  library(rgdal)
+  library(maptools)
+
   # Remove entires from the database where Latitude and/or Longitude are not specified
   data <- data[!(is.na(data$Latitude) | data$Latitude==""),]
   data <- data[!(is.na(data$Longitude) | data$Longitude==""),]
